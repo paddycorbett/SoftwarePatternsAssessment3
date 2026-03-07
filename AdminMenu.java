@@ -24,23 +24,23 @@ public class AdminMenu extends JFrame {
 	
 	
 	
-	private Menu menu = new Menu();
+	private Menu menu;
 	private ArrayList<Customer> customerList;
     private int position = 0;
-	private String password;
 	private Customer customer = null;
 	private CustomerAccount acc = new CustomerAccount();
-	JFrame f, f1;
-	 JLabel firstNameLabel, surnameLabel, pPPSLabel, dOBLabel;
-	 JTextField firstNameTextField, surnameTextField, pPSTextField, dOBTextField;
-		JLabel customerIDLabel, passwordLabel;
-		JTextField customerIDTextField, passwordTextField;
-	Container content;
-		Customer e;
+	private JFrame f, f1;
+	private JLabel firstNameLabel, surnameLabel, pPPSLabel, dOBLabel;
+	private JTextField firstNameTextField, surnameTextField, pPSTextField, dOBTextField;
+	private JLabel customerIDLabel, passwordLabel;
+	private JTextField customerIDTextField, passwordTextField;
+	private Container content;
+
 	
 
-	public AdminMenu() {
-		
+	public AdminMenu(Menu menu,ArrayList<Customer> customerList) {
+		this.menu = menu;
+		this.customerList = customerList;
 		 admin(customerList);
 	}
 

@@ -1,41 +1,20 @@
 import java.awt.*;
-
 import java.awt.event.*;
 import java.util.ArrayList;
-
 import javax.swing.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
-import javax.swing.text.MaskFormatter;
-import java.util.ArrayList;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
 public class Menu extends JFrame{
 	
 	
-	private AdminMenu AdminMenu = new AdminMenu();
-	private CustomerMenu CustomerMenu = new CustomerMenu();
+
 	private ArrayList<Customer> customerList = new ArrayList<Customer>();
-    private int position = 0;
 	private String password;
-	private Customer customer = null;
-	private CustomerAccount acc = new CustomerAccount();
-	JFrame f, f1;
-	 JLabel firstNameLabel, surnameLabel, pPPSLabel, dOBLabel;
-	 JTextField firstNameTextField, surnameTextField, pPSTextField, dOBTextField;
-		JLabel customerIDLabel, passwordLabel;
-		JTextField customerIDTextField, passwordTextField;
-	Container content;
-		Customer e;
-
-
-	 JPanel panel2;
-		JButton add;
-		String 	PPS,firstName,surname,DOB,CustomerID;
+	private JFrame f, f1;
+	private JLabel firstNameLabel, surnameLabel, pPPSLabel, dOBLabel;
+	private JTextField firstNameTextField, surnameTextField, pPSTextField, dOBTextField;
+	private JPanel panel2;
+	private JButton add;
+	private String 	PPS,firstName,surname,DOB,CustomerID;
 	
 	public static void main(String[] args)
 	{
@@ -92,15 +71,17 @@ public class Menu extends JFrame{
 					if(user.equals("New Customer"))
 					{
 						menuNewCustomer();
+						
+						
 					}
 					//if user select ADMIN----------------------------------------------------------------------------------------------
-					if(user.equals("Administrator")	)
+					else if(user.equals("Administrator")	)
 					{
 						MenuAdmin();
 			    
 					}
 					//if user selects CUSTOMER ---------------------------------------------------------------------------------------- 
-					if(user.equals("Customer")	)
+					else if(user.equals("Customer")	)
 					{
 						MenuExistingCustomer();
 					}
@@ -208,7 +189,7 @@ public class Menu extends JFrame{
 			content.add(panel, BorderLayout.CENTER);
 			content.add(panel2, BorderLayout.SOUTH);
 	
-			f1.setVisible(true);	
+			f1.setVisible(true);
 	}
 	//---------------------------------------------------------------------------------------------------------------------------
 	
@@ -267,7 +248,8 @@ public class Menu extends JFrame{
 	    {
 		f1.dispose();
 	    	loop = false;
-	    admin();					    
+	    	AdminMenu adminMenu = new AdminMenu(this, customerList);
+	    	adminMenu.admin(customerList);					    
 	    }		
 		
 		
@@ -342,21 +324,18 @@ public class Menu extends JFrame{
 	    {
 		f.dispose();
 	    	loop = false;
-	    	customer(customer);				    
+	    	customer(customer);			    
 	    }
+	}
+	
+	public void customer(Customer e1)
+	{
+	    CustomerMenu customerMenu = new CustomerMenu(this);
+	    customerMenu.customer(e1);
 	}
 	
 	//---------------------------------------------------------------------------------------------------------------------------
 	
-	public void admin()
-	{
-		AdminMenu.admin(customerList);
-	}
-	
-	public void customer(Customer e1)
-	{	
-		CustomerMenu.customer(e1);
-	}
 	
 	public static boolean isNumeric(String str)  // a method that tests if a string is numeric
 	{  
@@ -370,5 +349,7 @@ public class Menu extends JFrame{
 	  }  
 	  return true;  
 	}
+
+	
 }
 

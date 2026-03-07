@@ -23,11 +23,7 @@ import javax.swing.JTextField;
 public class CustomerMenu extends JFrame {
 	
 	
-	private Menu menu = new Menu();
-	private ArrayList<Customer> customerList;
-    private int position = 0;
-	private String password;
-	private Customer customer = null;
+	private Menu menu;
 	private CustomerAccount acc = new CustomerAccount();
 	JFrame f, f1;
 	JLabel firstNameLabel, surnameLabel, pPPSLabel, dOBLabel;
@@ -38,9 +34,10 @@ public class CustomerMenu extends JFrame {
 	Customer e;
 	
 	
-	public CustomerMenu() {
+	public CustomerMenu(Menu menu) {
 		
-		 //admin(customerList);
+		this.menu = menu;
+		 
 	}
 
 	
