@@ -15,6 +15,8 @@ public class Menu extends JFrame{
 	private JPanel panel2;
 	private JButton add;
 	private String 	PPS,firstName,surname,DOB,CustomerID;
+	private int frameWidth = 400;
+	private int frameHeight = 300;
 	
 	public static void main(String[] args)
 	{
@@ -31,7 +33,7 @@ public class Menu extends JFrame{
 		
 			
 			f = new JFrame("User Type");
-			f.setSize(400, 300);
+			f.setSize(frameWidth, frameHeight);
 			f.setLocation(200, 200);
 			f.addWindowListener(new WindowAdapter() {
 				public void windowClosing(WindowEvent we) { System.exit(0); }
@@ -96,7 +98,7 @@ public class Menu extends JFrame{
 		
 		f.dispose();		
 		f1 = new JFrame("Create New Customer");
-		f1.setSize(400, 300);
+		f.setSize(frameWidth, frameHeight);
 		f1.setLocation(200, 200);
 		f1.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent we) { System.exit(0); }

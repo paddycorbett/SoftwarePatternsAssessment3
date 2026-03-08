@@ -20,6 +20,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+
 public class AdminMenu extends JFrame {
 	
 	
@@ -35,7 +36,9 @@ public class AdminMenu extends JFrame {
 	private JLabel customerIDLabel, passwordLabel;
 	private JTextField customerIDTextField, passwordTextField;
 	private Container content;
-
+	private int frameWidth = 400;
+	private int frameHeight = 400;
+ 
 	
 
 	public AdminMenu(Menu menu,ArrayList<Customer> customerList) {
@@ -53,7 +56,7 @@ public void admin(ArrayList<Customer> customerList) {
 
 	
 	f = new JFrame("Administrator Menu");
-	f.setSize(400, 400);
+	f.setSize(frameWidth, frameHeight);
 	f.setLocation(200, 200);
 	f.addWindowListener(new WindowAdapter() {
 		public void windowClosing(WindowEvent we) { System.exit(0); }
@@ -168,7 +171,7 @@ public void admin(ArrayList<Customer> customerList) {
 		    {
 		    	f.dispose();
 		    	f = new JFrame("Administrator Menu");
-				f.setSize(400, 300);
+				f.setSize(frameWidth, frameHeight);
 				f.setLocation(200, 200);
 				f.addWindowListener(new WindowAdapter() {
 					public void windowClosing(WindowEvent we) { System.exit(0); }
@@ -313,7 +316,7 @@ public void admin(ArrayList<Customer> customerList) {
 		    {
 		    	f.dispose();
 		    	f = new JFrame("Administrator Menu");
-				f.setSize(400, 300);
+		    	f.setSize(frameWidth, frameHeight);
 				f.setLocation(200, 200);
 				f.addWindowListener(new WindowAdapter() {
 					public void windowClosing(WindowEvent we) { System.exit(0); }
@@ -470,7 +473,7 @@ public void admin(ArrayList<Customer> customerList) {
 			
 			f.dispose();
 			f = new JFrame("Administrator Menu");
-			f.setSize(400, 300);
+			f.setSize(frameWidth, frameHeight);
 			f.setLocation(200, 200);
 			f.addWindowListener(new WindowAdapter() {
 				public void windowClosing(WindowEvent we) { System.exit(0); }

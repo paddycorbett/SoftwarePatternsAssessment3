@@ -25,13 +25,15 @@ public class CustomerMenu extends JFrame {
 	
 	private Menu menu;
 	private CustomerAccount acc = new CustomerAccount();
-	JFrame f, f1;
-	JLabel firstNameLabel, surnameLabel, pPPSLabel, dOBLabel;
-	JTextField firstNameTextField, surnameTextField, pPSTextField, dOBTextField;
-	JLabel customerIDLabel, passwordLabel;
-	JTextField customerIDTextField, passwordTextField;
-	Container content;
-	Customer e;
+	private JFrame f, f1;
+	private JLabel firstNameLabel, surnameLabel, pPPSLabel, dOBLabel;
+	private JTextField firstNameTextField, surnameTextField, pPSTextField, dOBTextField;
+	private JLabel customerIDLabel, passwordLabel;
+	private JTextField customerIDTextField, passwordTextField;
+	private Container content;
+	private Customer e;
+	private int frameWidth = 400;
+	private int frameHeight = 300;
 	
 	
 	public CustomerMenu(Menu menu) {
@@ -45,7 +47,7 @@ public class CustomerMenu extends JFrame {
 		
 		f = new JFrame("Customer Menu");
 		e1 = e;
-		f.setSize(400, 300);
+		f.setSize(frameWidth, frameHeight);
 		f.setLocation(200, 200);
 		f.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent we) { System.exit(0); }
@@ -112,7 +114,7 @@ public class CustomerMenu extends JFrame {
 		f.dispose();
 		
 		f = new JFrame("Customer Menu");
-		f.setSize(400, 300);
+		f.setSize(frameWidth, frameHeight);
 		f.setLocation(200, 200);
 		f.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent we) { System.exit(0); }
